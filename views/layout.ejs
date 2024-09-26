@@ -1,0 +1,232 @@
+<Doctype>
+    <html>
+
+
+    <head>
+
+        <link rel="stylesheet" href="/css/style.css">
+
+    </head>
+
+    <body class="body">
+
+
+        <div class="sidenav">
+            <div class="profile-info">
+              <img src="/images/<%= user.id %>" alt="Profile Picture" class="profile-picture">
+              <% console.log("User image:", user.id); %>
+              
+              
+
+        
+              <div class="user-details">
+                <h2>John Doe</h2>
+                
+              </div>
+            </div>
+            <a href="inbox">Contacts</a>
+            <a href="#">Add project</a>
+            <a href="#">graphs</a>
+            <a href="#">profile</a>
+          </div>
+          
+          <div class="main">
+
+
+
+            <section id="inbox" class="inbox">
+                <ul class="message-list">
+                  <li class="message">
+                    <div class="avatar"></div>
+                    <div class="message-info">
+                      <h2>John Doe</h2>
+                      <p class="message-content">Hello there! How are you?</p>
+                      <p class="timestamp">2 hours ago</p>
+                    </div>
+                  </li>
+              
+                  <li class="message">
+                    <div class="avatar"></div>
+                    <div class="message-info">
+                      <h2>Jane Smith</h2>
+                      <p class="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                      <p class="timestamp">Yesterday</p>
+                    </div>
+                  </li>
+              
+                </ul>
+              </section>
+
+
+              <section class="resume">
+                <h3>Enter Your Resume</h3>
+                
+                <!-- Add Resume Button -->
+                <div class="add-resume mb-4">
+                  <form class="form-inline" action="/btnaddresume" method="post" enctype="multipart/form-data">
+                    <div class="form-group mb-2 mr-3">
+                        <label for="resumetitle" class="sr-only">Title</label>
+                        <input type="text" class="form-control" id="resumetitle" name="resumetitle" placeholder="Resume Title" required>
+                    </div>
+                    
+                    <div class="form-group mb-2 mr-3">
+                        <label for="resumedescription" class="sr-only">Details</label>
+                        <input type="text" class="form-control" id="resumedescription" name="resumedescription" placeholder="Resume Details" required>
+                    </div>
+                
+                    <div class="form-group mb-2 mr-3">
+                        <label for="Attached resume" class="sr-only">Attach resume</label>
+                        <input type="file" class="form-control" id="resumefile" name="resumefile" placeholder="Resume File" accept=".pdf" required>
+                    </div>
+                    
+                    <button name="btnaddresume" type="submit" class="btn btn-primary mb-2" id="add-resume-btn">Add Resume</button>
+
+                </form>
+                
+              </div>
+              
+                
+    <!-- Resume Table Container -->
+<!-- Resume Table Container -->
+<div class="container-fluid">
+  <!-- Table Heading -->
+  <h3 class="mb-4">Resume List</h3>
+
+  <!-- Resume Table -->
+  <div class="table-responsive">
+      <table class="table table-bordered table-hover custom-table">
+          <thead class="thead-dark">
+              <tr>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>File</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody id="resume-list">
+            <!-- Generate rows dynamically based on database content -->
+            <% if (resumes && resumes.length > 0) { %>
+                <% resumes.forEach(resume => { %>
+                    <tr class="mr-3">
+                        <td><%= resume.title %></td>
+                        <td><%= resume.description %></td>
+                        <td><a href="/download/<%= resume.id %>">Download Resume</a></td>
+        
+                         <td><%= resume.date.toDateString() %></td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Update</button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td colspan="5">No resumes found</td>
+                </tr>
+            <% } %>
+        </tbody>
+        
+      </table>
+  </div>
+</div>
+
+
+            </section>
+            
+              
+
+
+
+
+              <section class="add-project-section">
+                <h2>Add Project</h2>
+                <form method="post" action="/addproject" enctype="multipart/form-data">
+                    <label for="projectName">Project Name:</label>
+                    <input type="text" id="projectName" name="projectName" required>
+
+                    <label for="projectLogo">Project Icon:</label>
+                    <!-- Allow multiple file selection -->
+                    <input type="file" id="projecticon" name="projecticon" accept="image/*">
+            
+                    <label for="projectLogo">Project Logo:</label>
+                    <!-- Allow multiple file selection -->
+                    <input type="file" id="projectLogo" name="projectLogo" accept="image/*" multiple>
+            
+                    <label for="projectFile">Project File:</label>
+                    <input type="file" id="projectfile" name="projectfile" accept=".zip">
+            
+                    <label for="projectDescription">Project Description:</label>
+                    <textarea id="projectDescription" name="projectDescription" rows="4" required></textarea>
+            
+                    <label for="projectLanguage">Project Language:</label>
+                    <select id="projectLanguage" name="projectLanguage" required>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                    </select>
+                      <button type="submit" id="btn_click">Add Project</button>
+                </form>
+            </section>
+            
+              
+
+
+
+            <section class="profile-container">
+                <div class="profile-header">
+                  <label for="image" class="image-label">
+                    <img src="/images/<%= user.id %>" alt="User Avatar" class="profile-avatar">
+                  </label>
+                  <h1><%= user.name %></h1>
+                </div>
+              
+                <div class="profile-info">
+                  <input type="file" id="image" name="image" style="display: none;">
+              
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" value="<%= user.name %>">
+
+                  <label for="password">Password:</label>
+                  <input type="text" id="password" name="password" value="<%= user.password %>" >
+              
+                  <label for="password">Emial:</label>
+                  <input type="email" id="email" name="email" value="<%= user.email %>" >
+                  <label for="password">Phone:</label>
+                  <input type="phone" id="phone" name="phone" value="<%= user.phone %>">
+        
+
+              
+                  <button class="update-button">Update Profile</button>
+                </div>
+              </section>
+
+
+
+
+
+
+
+
+            <section class="graph-container">
+                <div class="bar" style="height: 80%;"></div>
+                <div class="bar" style="height: 60%;"></div>
+                <div class="bar" style="height: 40%;"></div>
+                <div class="bar" style="height: 20%;"></div>
+              </section>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+
+          <script src="layout.js"></script>
+    </body>
+    </html>

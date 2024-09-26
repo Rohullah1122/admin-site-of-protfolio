@@ -1,0 +1,308 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding-top: 20px;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .profile-info {
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    padding: 20px;
+    color: #f1f1f1;
+  }
+  
+  .profile-picture {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+
+  }
+  
+  .user-details {
+    margin-top: 10px;
+  }
+  
+  .sidenav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav h2, .sidenav p {
+    margin: 0;
+  }
+  
+  .main {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.5s;
+    scroll-behavior: smooth;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 16px;}
+  }
+  
+
+
+  .inbox {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .message-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .message {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .message-info {
+    flex: 1;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .message-content {
+    color: #555;
+  }
+  
+  .timestamp {
+    color: #888;
+    font-size: 0.8em;
+  }
+
+
+  .add-project-section {
+    padding: 20px;
+    height: 100%;
+    margin-top: 20px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  input,
+  select,
+  textarea {
+    margin-bottom: 16px;
+    padding: 8px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+
+  .resume{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    padding: 10px;
+
+    
+
+  }
+
+  .resume .custom-table td, .custom-table th {
+    padding: 1.5rem; /* Adjust the padding as needed */
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.custom-table td, .custom-table th {
+  padding: 1.5rem; /* Increased padding for readability */
+  text-align: center; /* Center align text */
+  vertical-align: middle; /* Center align vertically */
+}
+.custom-table thead th {
+  background-color: #343a40; /* Dark background for headers */
+  color: #fff; /* White text color */
+}
+.custom-table tbody tr {
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+.custom-table tbody tr:hover {
+  background-color: #f8f9fa; /* Light gray background on hover */
+}
+.custom-table td button {
+  margin: 0 0.5rem; /* Space between buttons */
+}
+.table-responsive {
+  color: #000; /* Default text color for readability */
+  text-shadow: none; /* Remove text shadow to improve readability */
+}
+.container-fluid {
+  padding: 2rem; /* Add padding around the container */
+}
+.custom-table {
+  border-radius: 0.5rem; /* Rounded corners */
+  overflow: hidden; /* Prevent content from overflowing */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Box shadow for the table */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .profile-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .profile-header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profile-avatar {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .profile-info {
+    padding: 20px;
+  }
+  
+  .profile-info label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .profile-info input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  .update-button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .update-button:hover {
+    background-color: #45a049;
+  }
+
+
+.image-label {
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .graph-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 300px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .bar {
+    width: 20%;
+    background-color: #3498db;
+    transition: height 0.5s;
+  }

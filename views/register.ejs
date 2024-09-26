@@ -1,0 +1,54 @@
+<%- include('partials/header') %>
+
+
+
+
+<div class="container">
+
+
+
+    <form method="post" action="/register" enctype="multipart/form-data" class="centered-form">
+        <div class="mb-6 text-center">
+          <!-- Image that will act as the file input trigger -->
+          <img src="/images/pavatar.jpg" alt="Profile Picture" class="profile-picture" id="profileImage" style="cursor: pointer;" accept=".pdf" required>
+        </div>
+      
+        <!-- Hidden file input to select the image -->
+        <input type="file" name="rimage" id="fileInput" style="display: none;">
+      
+        <div class="mb-3">
+          <label for="txtname" class="form-label">Name</label>
+          <input type="text" class="form-control" name="rname" id="txtname" aria-describedby="Name" required>
+        </div>
+      
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="rpassword" class="form-control" id="exampleInputPassword1" required>
+        </div>
+      
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" name="remail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        </div>
+      
+        <div class="mb-3">
+          <label for="exampleInputPhone" class="form-label">Phone</label>
+          <input type="number" name="rphone" class="form-control" id="exampleInputPhone" aria-describedby="Number" required>
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<%- include('partials/footer') %>
